@@ -20,6 +20,7 @@
     "rxjs": "6.6.3",
     "bootstrap": "3.3.7",
     "font-awesome": "4.7.0",
+    "ngex-table": "11.0.2",
     "tslib": "2.0.3",
     "zone.js": "0.11.3"    
   },
