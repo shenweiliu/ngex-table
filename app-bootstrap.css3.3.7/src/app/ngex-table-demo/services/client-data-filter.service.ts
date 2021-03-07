@@ -70,14 +70,14 @@ export class ClientDataFilterService {
                         rtn = true;
                     }
                     else if (filterParams.dateFrom && filterParams.dateTo) {
-                        rtn = (new Date(itemData[columnName]) >= filterParams.dateFrom.jsdate &&
-                            new Date(itemData[columnName]) <= filterParams.dateTo.jsdate);
+                        rtn = (new Date(itemData[columnName]) >= filterParams.dateFrom.singleDate.jsDate &&
+                            new Date(itemData[columnName]) <= filterParams.dateTo.singleDate.jsDate);
                     }
                     else if (filterParams.dateFrom && !filterParams.dateTo) {
-                        rtn = (new Date(itemData[columnName]) >= filterParams.dateFrom.jsdate);
+                        rtn = (new Date(itemData[columnName]) >= filterParams.dateFrom.singleDate.jsDate);
                     }
                     else if (!filterParams.dateFrom && filterParams.dateTo) {
-                        rtn = (new Date(itemData[columnName]) <= filterParams.dateTo.jsdate);
+                        rtn = (new Date(itemData[columnName]) <= filterParams.dateTo.singleDate.jsDate);
                     }
                     return rtn;
                 }

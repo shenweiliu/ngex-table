@@ -9,7 +9,6 @@ import { ServerMockDataService } from './services/server-mock-data.service';
 import { ApiUrlForProductList, ServerPagingDataSource } from './services/app.config';
 import * as glob from './services/globals';
 
-
 @Component({
     moduleId: module.id.toString(),
     selector: 'server-paging',
@@ -169,10 +168,10 @@ export class ServerPagingComponent implements OnInit, OnDestroy {
         }
 
         if (this.searchParams.dateFrom && this.searchParams.dateFrom != '') {
-            req.dateSearchFilter.searchDateFrom = this.searchParams.dateFrom.jsdate;
+            req.dateSearchFilter.searchDateFrom = this.searchParams.dateFrom.singleDate.jsDate;
         }
         if (this.searchParams.dateTo && this.searchParams.dateTo != '') {
-            req.dateSearchFilter.searchDateTo = this.searchParams.dateTo.jsdate;
+            req.dateSearchFilter.searchDateTo = this.searchParams.dateTo.singleDate.jsDate;
         }
 
         if (this.searchParams.statusCode != '') {

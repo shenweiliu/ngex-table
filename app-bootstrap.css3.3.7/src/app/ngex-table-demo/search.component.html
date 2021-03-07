@@ -48,9 +48,8 @@
                             <td>
                                 <input type="text" [(ngModel)]="search.dateFrom" class="form-control date-input" id="txtFirstAvailFrom" placeholder="Date from"
                                        required (focus)="errorMessage=''"
-                                       ngx-mydatepicker name="txtFirstAvailFrom"
-                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpFrom="ngx-mydatepicker"
-                                       (calendarToggle)="onDpFromToggle($event)"
+                                       angular-mydatepicker name="txtFirstAvailFrom"  
+                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpFrom="angular-mydatepicker"                                       
                                        [attr.disabled]="dpDisabled?'':null" autocomplete="off">
                             </td>
                             <td>
@@ -66,11 +65,10 @@
                     <table>
                         <tr>
                             <td>
-                                <input type="text" [(ngModel)]="search.dateTo" class="form-control date-input" id="txtFirstAvailTo" placeholder="Date to"
+                                <input type="text" [(ngModel)]="search.dateTo" class="form-control  date-input" id="txtFirstAvailTo" placeholder="Date to"
                                        required (focus)="errorMessage=''"
-                                       ngx-mydatepicker name="txtFirstAvailTo"
-                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpTo="ngx-mydatepicker"
-                                       (calendarToggle)="onDpToToggle($event)"
+                                       angular-mydatepicker name="txtFirstAvailTo"  
+                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpTo="angular-mydatepicker"
                                        [attr.disabled]="dpDisabled?'':null" autocomplete="off">
                             </td>
                             <td>

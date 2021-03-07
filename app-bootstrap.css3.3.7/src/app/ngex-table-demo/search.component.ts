@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChange, ViewChild } from '@angular/core';
-import { INgxMyDpOptions, IMyDateModel, IMyInputFieldChanged, IMyCalendarViewChanged, IMyMarkedDate, IMyDate, IMyDefaultMonth } from '../ngx-my-date-picker/interfaces';
-import { NgxMyDatePickerDirective } from '../ngx-my-date-picker/ngx-my-date-picker.input';
+import { AngularMyDatePickerDirective, IAngularMyDpOptions, IMyDateModel, IMyInputFieldChanged, IMyCalendarViewChanged, IMyMarkedDate, IMyDate, IMyDefaultMonth } from 'angular-mydatepicker';
 import { PaginationType } from 'ngex-table';
 import { MyDatePickConfig } from './services/app.config';
 import { ProductSearchTypes, ProductStautsTypes } from './services/local-data';
@@ -30,9 +29,9 @@ export class SearchComponent implements OnInit {
     productStatusTypes: any;    
 
     //MyDatePicker.
-    myDatePickerOptions: INgxMyDpOptions = MyDatePickConfig;
-    @ViewChild('dpFrom', { static: true }) dpFrom: NgxMyDatePickerDirective;
-    @ViewChild('dpTo', { static: true }) dpTo: NgxMyDatePickerDirective;
+    myDatePickerOptions: IAngularMyDpOptions = MyDatePickConfig;
+    @ViewChild('dpFrom') dpFrom: AngularMyDatePickerDirective;
+    @ViewChild('dpTo') dpTo: AngularMyDatePickerDirective;
 
     defMonth: IMyDefaultMonth = {
         defMonth: ''
@@ -77,21 +76,6 @@ export class SearchComponent implements OnInit {
         //this.showProductList = false;
     }
     
-    //MyDatePicker.
-    onDpFromToggle(event: number): void {
-        //console.log('onCalendarToggle(): Reason: ', event);
-        if (event == 1 && this.dpTo.isOpen) {
-            //Close dpTo.
-            this.dpTo.closeCalendar();
-        }
-    }
-    onDpToToggle(event: number): void {
-        if (event == 1 && this.dpFrom.isOpen) {
-            //Close dpFrom.
-            this.dpFrom.closeCalendar();
-        }
-    }
-
     searchGo(event?: Event): void {
         //Clear error message if any.
         this.errorMessage = ""; 
@@ -141,7 +125,7 @@ export class SearchComponent implements OnInit {
             }
             //From should not be later than To.
             if (dateFrom && dateFrom != "" && dateTo && dateTo != "") {
-                if (dateFrom.jsdate > dateTo.jsdate) {
+                if (dateFrom.singleDate.jsDate > dateTo.singleDate.jsDate) {
                     this.errorMessage += "Available To date should be greater or equal to Available From date.\n";
                 }
             }

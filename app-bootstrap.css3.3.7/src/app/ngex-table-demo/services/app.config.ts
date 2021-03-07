@@ -1,10 +1,10 @@
 export const ServerPagingDataSource: string = 'mock';
 //export const ServerPagingDataSource: string = 'server';
 
-export const WebApiRootUrl: string = "http://localhost:7200/api/";  //Core 5.0
+//export const WebApiRootUrl: string = "http://localhost:7200/api/";  //Core 5.0
 //export const WebApiRootUrl: string = "http://localhost:6600/api/";  //Core 3.1
 //export const WebApiRootUrl: string = "http://localhost:5112/api/";  //Core 2.1
-//export const WebApiRootUrl: string = "http://storecoredataservice/api/";
+export const WebApiRootUrl: string = "http://storecoredataservice/api/";
 
 
 //export const ApiUrlForProductList: string = WebApiRootUrl + 'getproductlist_p'; //Backward compatibility.
@@ -48,8 +48,8 @@ export const PageSizeList: Array<any> = [
     //{ value: -1, text: 'both' }
 ];
 
-import { INgxMyDpOptions, IMyMarkedDate } from '../../ngx-my-date-picker/interfaces';
-export const MyDatePickConfig: INgxMyDpOptions = {
+import { IAngularMyDpOptions, IMyMarkedDate } from 'angular-mydatepicker';
+export const MyDatePickConfig: IAngularMyDpOptions = {    
     dateFormat: 'mm/dd/yyyy',
     firstDayOfWeek: 'su',
     sunHighlight: false,
@@ -73,6 +73,5 @@ export const MyDatePickConfig: INgxMyDpOptions = {
     selectorWidth: '22rem', //'250px', '16rem' for bs-css 4
     closeSelectorOnDateSelect: true,
     closeSelectorOnDocumentClick: true,
-    allowSelectionOnlyInCurrentMonth: true,
     appendSelectorToBody: true
 };
