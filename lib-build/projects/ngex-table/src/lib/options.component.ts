@@ -4,30 +4,10 @@ import { TableMainDirective } from './table-main.directive';
 import { NameValueItem } from './model-interface';
 import { SortingTypeLocation } from './constants';
 
-@Component({    
-    selector: 'options',
+@Component({        
     //moduleId: module.id.toString(),
-    //templateUrl: "./options.component.html"
-    template: `
-<div class="extable-option">
-    <div *ngIf="enableOptionBoard; else leaveSmallHeight" class="form-inline option-box" [class.margin-top-04]="showOptionBoardContent">
-        <div *ngIf="showOptionBoardContent" class="form-group">
-            <sorting-type [sortingTypeLocation]="sortingTypeLocation"></sorting-type>
-            <input type="checkbox" class="margin-left-1" [(ngModel)]="showGroupingLines" (ngModelChange)="onShowGroupingLinesChange($event)" />
-            <span>&#160;Show Grouping Lines</span>
-        </div>
-        <div class="option-link" [class.option-hide-link]="!showOptionBoardContent">
-            <a title="{{optionToggleHint}}" (click)="toggleOptions($event)" class="Larger-font-size">
-                <i *ngIf="showOptionBoardContent">&times;</i>
-                <i *ngIf="!showOptionBoardContent" class="fa fa-ellipsis-h"></i>
-            </a>
-        </div>
-    </div>
-    <ng-template #leaveSmallHeight>
-        <div class="option-box-hide"></div>
-    </ng-template>
-</div>
-`
+    selector: 'options',
+    templateUrl: "./options.component.html"    
 })
 export class OptionsComponent implements OnInit {     
     config: any;

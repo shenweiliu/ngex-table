@@ -8,26 +8,9 @@ import { TableChange, SortChangedType } from './constants';
 import * as commonMethods from './common-methods';
 
 @Component({    
-    selector: 'column-sort',
     //moduleId: module.id.toString(),
-    //templateUrl: './column-sorting.component.html'
-    template: `
-<div class="extable-col-sorting">
-    <a (click)="toggleSort($event)" class="cursor-pointer" title="{{ctrlKeyHint}}">        
-        <i class="sort-icon" #sortIcon></i>
-    </a>
-    <!--Sequence number dropdown list-->
-    <div *ngIf="showSequenceOption" class="sequence-selector" #sequenceDiv>
-        <select id="ddlSortSequence" #sequenceSelect
-                [(ngModel)]="sequenceSelected" (ngModelChange)="onSequenceChange($event)">
-            <option *ngFor="let option of sequenceOptions" [ngValue]="option">
-                {{option.text}}
-            </option>
-        </select>
-    </div>
-</div>
-`
-       
+    selector: 'column-sort',
+    templateUrl: './column-sorting.component.html'
 })
 export class ColumnSortingComponent implements OnInit, OnChanges {
     config: any;

@@ -7,20 +7,9 @@ import { PagingParams, SortableItem, SortItem, NameValueItem } from './model-int
 import { TableChange, SortingTypeLocation } from './constants';
 
 @Component({
-    selector: 'multi-sort-command',
     //moduleId: module.id.toString(),
-    //templateUrl: "./multi-sorting-command.component.html"
-    template: `
-<div class="extable-sort-command" [class.opened]="showMultiSortPanel">
-    <div class="form-inline">
-        <span *ngIf="!showSortingTypeSelect" class="sort-box-label">Multiple Column Sorting</span>
-        <sorting-type *ngIf="showSortingTypeSelect" [sortingTypeLocation]="sortingTypeLocation"></sorting-type>
-        <button type="button" class="btn btn-primary" id="btnSort" (click)="sortOk()">&#160;&#160;OK&#160;&#160;</button>&#160;&#160;
-        <button type="button" class="btn btn-secondary" id="btnCancelSort" (click)="cancel()">&#160;&#160;Cancel&#160;&#160;</button>&#160;&#160;
-        <button type="button" class="btn btn-secondary" id="btnClearSort" (click)="clear()">Clear Sortings</button>&#160;&#160;
-    </div>
-</div>
-`
+    selector: 'multi-sort-command',    
+    templateUrl: "./multi-sorting-command.component.html"    
 })
 export class MultiSortingCommandComponent implements OnInit {
     config: any;

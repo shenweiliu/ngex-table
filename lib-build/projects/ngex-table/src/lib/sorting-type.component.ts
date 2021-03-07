@@ -4,19 +4,10 @@ import { TableMainDirective } from './table-main.directive';
 import { SortingTypeLocation } from './constants';
 import { NameValueItem } from './model-interface';
 
-@Component({
-    selector: 'sorting-type',
+@Component({    
     //moduleId: module.id.toString(),
-    //templateUrl: "./sorting-type.component.html"
-    template: `
-<div *ngIf="showSortingOptions" class="extable-sort-type margin-right-1">
-    <span class="padding-left">Sorting:&#160;</span>
-    <select class="form-control select-style" [(ngModel)]="sortingOption" (ngModelChange)="onSortingOptionChange($event)">
-        <option value="single">Single Column</option>
-        <option value="multiple">Multiple Columns</option>
-    </select>
-</div>
-`
+    selector: 'sorting-type',
+    templateUrl: "./sorting-type.component.html"    
 })
 export class SortingTypeComponent implements OnInit {     
     config: any;    
