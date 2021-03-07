@@ -13,7 +13,7 @@ import { SideMenuComponent } from "./side-menu.component";
 import { ClientPagingComponent } from './client-paging.component';
 import { ServerPagingComponent } from './server-paging.component';
 import { SearchComponent } from './search.component';
-import { NgxMyDatePickerModule } from '../ngx-my-date-picker/ngx-my-date-picker.module';
+import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 import { HttpDataService } from './services/httpclient-data.service';
 import { ClientDataFilterService } from './services/client-data-filter.service';
 import { ServerMockDataService } from './services/server-mock-data.service';
@@ -34,7 +34,7 @@ import { MessageTransferService } from './services/message-transfer.service';
         NgExTableModule,
         CommonModule,
         RouterModule.forRoot(routes),
-        NgxMyDatePickerModule.forRoot()
+        AngularMyDatePickerModule
     ],
     providers: [
         HttpDataService, 

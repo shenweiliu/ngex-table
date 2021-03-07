@@ -1,4 +1,4 @@
-﻿<div class="container" style="padding-bottom: 0;">
+<div class="container" style="padding-bottom: 0;">
     <div *ngIf="errorMessage !=''" id="message" class="error-message ng-with-newlines">{{errorMessage}}</div>
     <fieldset>
         <legend>&#160;{{searchTitle}}&#160;</legend>
@@ -27,13 +27,13 @@
                 <span>Price ($): between&#160;</span>
             </div>
             <div class="form-group">
-                <input type="text" [(ngModel)]="search.priceLow" class="form-control" style="width:8rem;" id="txtPriceLow" placeholder="Low" (focus)="errorMessage=''">
+                <input type="text" [(ngModel)]="search.priceLow" class="form-control price-input" id="txtPriceLow" placeholder="Low" (focus)="errorMessage=''">
             </div>
             <div class="form-group left-dent">
                 <span>and&#160;</span>
             </div>
             <div class="form-group">
-                <input type="text" [(ngModel)]="search.priceHigh" class="form-control" style="width:8rem;" id="txtPriceHigh" placeholder="High" (focus)="errorMessage=''">
+                <input type="text" [(ngModel)]="search.priceHigh" class="form-control price-input" id="txtPriceHigh" placeholder="High" (focus)="errorMessage=''">
             </div>
         </div>
         <div class="bottom-line"></div>
@@ -46,15 +46,14 @@
                     <table>
                         <tr>
                             <td>
-                                <input type="text" [(ngModel)]="search.dateFrom" class="form-control" style="width:7.5rem;" id="txtFirstAvailFrom" placeholder="Date from"
+                                <input type="text" [(ngModel)]="search.dateFrom" class="form-control date-input" id="txtFirstAvailFrom" placeholder="Date from"
                                        required (focus)="errorMessage=''"
-                                       ngx-mydatepicker name="txtFirstAvailFrom"
-                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpFrom="ngx-mydatepicker"
-                                       (calendarToggle)="onDpFromToggle($event)"
+                                       angular-mydatepicker name="txtFirstAvailFrom"  
+                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpFrom="angular-mydatepicker"                                       
                                        [attr.disabled]="dpDisabled?'':null" autocomplete="off">
                             </td>
                             <td>
-                                <button type="button" class="btn btn-default height-to-form-control" (click)="dpFrom.toggleCalendar()"><i class="fa fa-calendar" style="font-size: 1.25rem;"></i></button>
+                                <button type="button" class="btn btn-default height-to-form-control" (click)="dpFrom.toggleCalendar()"><i class="fa fa-calendar date-picker-icon"></i></button>
                             </td>
                         </tr>
                     </table>
@@ -66,15 +65,14 @@
                     <table>
                         <tr>
                             <td>
-                                <input type="text" [(ngModel)]="search.dateTo" class="form-control" style="width:7.5rem;" id="txtFirstAvailTo" placeholder="Date to"
+                                <input type="text" [(ngModel)]="search.dateTo" class="form-control  date-input" id="txtFirstAvailTo" placeholder="Date to"
                                        required (focus)="errorMessage=''"
-                                       ngx-mydatepicker name="txtFirstAvailTo"
-                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpTo="ngx-mydatepicker"
-                                       (calendarToggle)="onDpToToggle($event)"
+                                       angular-mydatepicker name="txtFirstAvailTo"  
+                                       [options]="myDatePickerOptions" [defaultMonth]="defMonth" #dpTo="angular-mydatepicker"
                                        [attr.disabled]="dpDisabled?'':null" autocomplete="off">
                             </td>
                             <td>
-                                <button type="button" class="btn btn-default height-to-form-control" (click)="dpTo.toggleCalendar()"><i class="fa fa-calendar" style="font-size: 1.25rem;"></i></button>
+                                <button type="button" class="btn btn-default height-to-form-control" (click)="dpTo.toggleCalendar()"><i class="fa fa-calendar date-picker-icon"></i></button>
                             </td>
                         </tr>
                     </table>

@@ -30,3 +30,15 @@ legend {
     width: auto;
     font-weight: bold;
 }
+
+.price-input {
+    width: 8rem;
+}
+
+.date-input {
+    width: 7.5rem;
+}
+
+.date-picker-icon {
+    font-size: 1.25rem; 
+}

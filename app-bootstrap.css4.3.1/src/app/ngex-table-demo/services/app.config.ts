@@ -48,8 +48,8 @@ export const PageSizeList: Array<any> = [
     //{ value: -1, text: 'both' }
 ];
 
-import { INgxMyDpOptions, IMyMarkedDate } from '../../ngx-my-date-picker/interfaces';
-export const MyDatePickConfig: INgxMyDpOptions = {
+import { IAngularMyDpOptions, IMyMarkedDate } from 'angular-mydatepicker';
+export const MyDatePickConfig: IAngularMyDpOptions = {
     dateFormat: 'mm/dd/yyyy',
     firstDayOfWeek: 'su',
     sunHighlight: false,
@@ -73,6 +73,5 @@ export const MyDatePickConfig: INgxMyDpOptions = {
     selectorWidth: '16rem', //'250px',
     closeSelectorOnDateSelect: true,
     closeSelectorOnDocumentClick: true,
-    allowSelectionOnlyInCurrentMonth: true,
     appendSelectorToBody: true
 };
