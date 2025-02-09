@@ -5,7 +5,7 @@ The Angular `ngex-table` library package is published on the [npm](https://www.n
 
 ## Installation
 
-Run `npm install ngex-table` to add the library into your project directory,, or add `"ngex-table": "^19.0.1"` to the package.json file and then run `npm install` to update the existing file.
+Run `npm install ngex-table` to add the library into your project directory,, or add `"ngex-table": "^19.0.2"` to the package.json file and then run `npm install` to update the existing file.
 
 ## Details and Use Cases
 
